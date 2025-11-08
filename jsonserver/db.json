@@ -17,5 +17,20 @@
       "permissoes": "colaborador",
       "id": 6
     }
+  ],
+  "clientes": [
+    {
+      "nomeCompleto": "JOAO VICTOR CINTRA CRUZ",
+      "cpf": "098.615.889-57",
+      "dataNascimento": "2005-12-03",
+      "email": "jv681339@gmail.com",
+      "telefone": "(44) 98431-3628",
+      "logradouro": "Rua Ouro Preto",
+      "numero": "3348",
+      "bairro": "Jardim Tamoyo",
+      "cidade": "Umuarama",
+      "estado": "PR",
+      "id": 1
+    }
   ]
 }

@@ -69,52 +69,75 @@ export default function GerenciarClientes() {
             >
                 <div className="col-md-12">
                     <label>Nome Completo</label>
-                    <input id="nomeCompleto" className="form-control" required />
+                    <input id="nomeCompleto" name="nomeCompleto" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>CPF</label>
-                    <input id="cpf" className="form-control" required />
+                    <input
+                        id="cpf"
+                        name="cpf"
+                        className="form-control"
+                        required
+                        onInput={(e) => {
+                            let value = e.currentTarget.value.replace(/\D/g, "");
+                            value = value.replace(/(\d{3})(\d)/, "$1.$2");
+                            value = value.replace(/(\d{3})(\d)/, "$1.$2");
+                            value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+                            e.currentTarget.value = value;
+                        }}
+                    />
                 </div>
 
                 <div className="col-md-6">
                     <label>Data de Nascimento</label>
-                    <input type="date" id="dataNascimento" className="form-control" required />
+                    <input type="date" id="dataNascimento" name="dataNascimento" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>Email</label>
-                    <input type="email" id="email" className="form-control" required />
+                    <input type="email" id="email" name="email" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>Telefone</label>
-                    <input id="telefone" className="form-control" required />
+                    <input
+                        id="telefone"
+                        name="telefone"
+                        className="form-control"
+                        required
+                        onInput={(e) => {
+                            let value = e.currentTarget.value.replace(/\D/g, "");
+                            value = value.replace(/^(\d{2})(\d)/g, "($1) $2");
+                            value = value.replace(/(\d{5})(\d)/, "$1-$2");
+                            e.currentTarget.value = value;
+                        }}
+                    />
                 </div>
 
                 <div className="col-md-12">
                     <label>Logradouro</label>
-                    <input id="logradouro" className="form-control" required />
+                    <input id="logradouro" name="logradouro" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>Número</label>
-                    <input id="numero" className="form-control" required />
+                    <input id="numero" name="numero" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>Bairro</label>
-                    <input id="bairro" className="form-control" required />
+                    <input id="bairro" name="bairro" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>Cidade</label>
-                    <input id="cidade" className="form-control" required />
+                    <input id="cidade" name="cidade" className="form-control" required />
                 </div>
 
                 <div className="col-md-6">
                     <label>Estado</label>
-                    <input maxLength={2} id="estado" className="form-control" required />
+                    <input maxLength={2} id="estado" name="estado" className="form-control" required />
                 </div>
 
                 <div className="col-md-12">

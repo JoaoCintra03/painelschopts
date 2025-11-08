@@ -7,6 +7,8 @@ import { Categorias } from "./pages/Categorias"
 import { Usuarios } from "./pages/Usuarios"
 import GerenciarUsuarios from "./pages/Usuarios/Gerenciar"
 import Login from "./pages/Login"
+import GerenciarClientes from "./pages/Clientes/Gerenciar"
+import { Clientes } from "./pages/Clientes"
 
 export const Rotas = () => {
     return (
@@ -28,6 +30,18 @@ export const Rotas = () => {
                     path="/usuarios/:id"
                     element={<GerenciarUsuarios />}
                 />
+
+                <Route 
+                path="/clientes" 
+                element={<Clientes />} />
+
+                <Route 
+                path="/clientes/cadastrar" 
+                element={<GerenciarClientes />} />
+
+                <Route 
+                path="/clientes/:id"
+                element={<GerenciarClientes />} />
                 <Route
                     path="*"
                     element={<h1>404</h1>}

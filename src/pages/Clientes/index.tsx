@@ -10,9 +10,17 @@ import type { IToken } from '../../interfaces/token';
 interface ICliente {
     id: number;
     nomeCompleto: string;
+    cpf: string;
+    dataNascimento: string;
     email: string;
+    telefone: string;
+    logradouro: string;
+    numero: string;
+    bairro: string;
     cidade: string;
+    estado: string;
 }
+
 
 export const Clientes = () => {
 
@@ -81,10 +89,10 @@ export const Clientes = () => {
     return (
         <>
             <Toast
-              color={corToast}
-              show={showToast}
-              message={messageToast}
-              onClose={() => { setShowToast(false) }}
+                color={corToast}
+                show={showToast}
+                message={messageToast}
+                onClose={() => { setShowToast(false) }}
             />
 
             <Loading visible={isLoading} />
@@ -116,8 +124,11 @@ export const Clientes = () => {
                     <tr>
                         <th>#</th>
                         <th>Nome Completo</th>
+                        <th>CPF</th>
+                        <th>Data Nasc.</th>
                         <th>Email</th>
-                        <th>Cidade</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -127,8 +138,16 @@ export const Clientes = () => {
                         <tr key={cliente.id}>
                             <td>{cliente.id}</td>
                             <td>{cliente.nomeCompleto}</td>
+                            <td>{cliente.cpf}</td>
+                            <td>{cliente.dataNascimento}</td>
                             <td>{cliente.email}</td>
-                            <td>{cliente.cidade}</td>
+                            <td>{cliente.telefone}</td>
+
+                            <td>
+                                {cliente.logradouro}, {cliente.numero} - {cliente.bairro}<br />
+                                {cliente.cidade} / {cliente.estado}
+                            </td>
+
                             <td>
                                 <button
                                     className="btn btn-primary"
@@ -138,6 +157,7 @@ export const Clientes = () => {
                                 >
                                     <FaPen />
                                 </button>
+
                                 <button
                                     className="btn btn-danger"
                                     type="button"
@@ -150,6 +170,7 @@ export const Clientes = () => {
                     ))}
                 </tbody>
             </table>
+
         </>
     )
 }
