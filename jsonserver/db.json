@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "nome": "KaiQ",
+      "email": "kaiq@gmail.com",
+      "id": 2
+    },
+    {
+      "nome": "Rogerio",
+      "email": "rogerio@gmail.com",
+      "id": 5
+    },
+    {
+      "email": "Cas@gmail.com",
+      "password": "$2a$10$eQnxac8M7Z/qtMXRjphrPuXmmYoN.kARjGVLs5EsqN6ji/sVGjHfe",
+      "nome": "Cas",
+      "permissoes": "colaborador",
+      "id": 6
+    }
+  ]
+}
